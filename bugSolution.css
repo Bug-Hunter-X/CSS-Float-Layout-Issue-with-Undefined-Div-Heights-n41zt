@@ -1,0 +1,39 @@
+To solve this issue, use one or a combination of the following methods:
+
+**1. Setting a fixed height:**
+```css
+div {
+  width: 50%;
+  float: left;
+  height: 200px; /* Or any other fixed height */
+}
+```
+
+**2. Using `overflow`:** This can prevent unexpected behaviour when using floats.
+```css
+div {
+  width: 50%;
+  float: left;
+  overflow: hidden; /* Or auto */
+}
+```
+
+**3. Clearing floats (using clearfix):**
+```css
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+div {
+  width: 50%;
+  float: left;
+}
+.parent {
+  /* Add the clearfix class to the parent container */
+  width: 100%;
+  overflow: hidden;
+  .clearfix
+}
+```
+Choose the method that best fits your layout requirements.  Using a combination of these techniques may be necessary in more complex layouts.
